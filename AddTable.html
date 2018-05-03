@@ -1,0 +1,40 @@
+<!Doctype <!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta http-equiv="X-UA-Compatible" content="ie=edge">
+        <title>Assignment 2</title>
+    </head>
+<body>
+    <table id="dynamic-table" border="1">
+    </table>
+    <br>
+    <input id="button1" type="button" value="Add row">
+
+    <script>
+        //get the button element in DOM
+        var addrowButton = document.getElementById("button1");
+        //add listner to click event
+        addrowButton.addEventListener('click', addRow);
+        //addRow function goes here
+        function addRow(){
+            //console.log("clicked");
+            //get DOM element for table
+            var table1 = document.getElementById("dynamic-table");
+            //get table length
+            var x = table1.rows.length;
+            var row = table1.insertRow(x);
+
+            var cell1 = row.insertCell(0);
+            var cell2 = row.insertCell(1);
+
+            var cellValue = x * 2 + 1;
+            cell1.innerHTML = "Cell" + cellValue;
+            cellValue = cellValue + 1;
+            cell2.innerHTML = "Cell" + cellValue;
+        }
+       
+    </script>
+</body>
+</html>
